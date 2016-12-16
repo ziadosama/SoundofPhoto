@@ -8,7 +8,7 @@ class SineInstrument implements Instrument
     // the amplitude is zero because 
     // we are going to patch a Line to it anyway
     wave   = new Oscil( frequency, 1, Waves.SINE  );
-    adsr =new ADSR(0.5, 0.01, 0.05, 0.5, 0.5);
+    adsr =new ADSR(0.5, 0.06, 0.1, 1,1);
     wave.patch( adsr );
   }
   

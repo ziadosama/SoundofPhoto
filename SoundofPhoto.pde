@@ -62,7 +62,7 @@ void draw() {
   recorder.beginRecord();
   seperate(k);
   out.resumeNotes();
-  k++;
+  k+=2;
 }
 
 
@@ -111,13 +111,13 @@ void seperate(int i)
     note+="6";
   else if (sat<=75 &&sat>=100)
     note+="8";
-  float bri=brightness(c);
-  if (bri<=75)
-  {
-    out.playNote(i, 2, new SineInstrument(Frequency.ofPitch(notes[tbp]).asHz()));
-    out.playNote(i, 2, new SineInstrument(Frequency.ofPitch(notes[((tbp+2)%8)]).asHz()));
-    out.playNote(i, 2, new SineInstrument(Frequency.ofPitch(notes[((tbp+4)%8)]).asHz()));
-  } else
+  //float bri=brightness(c);
+  //if (bri<=75)
+  //{
+  //  out.playNote(i, 1, new SineInstrument(Frequency.ofPitch(notes[tbp]).asHz()));
+  //  out.playNote(i, 1, new SineInstrument(Frequency.ofPitch(notes[((tbp+2)%8)]).asHz()));
+  //  out.playNote(i, 1, new SineInstrument(Frequency.ofPitch(notes[((tbp+4)%8)]).asHz()));
+  //} else
     out.playNote(i, 1,new SineInstrument(Frequency.ofPitch(note).asHz()));
 }
 int findN(String note)
